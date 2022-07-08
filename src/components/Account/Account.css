@@ -1,0 +1,13 @@
+.icon {
+  margin-right: 4px;
+
+  font-size: 12px;
+}
+.transfer-icon {
+  font-size: 14px;
+}
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

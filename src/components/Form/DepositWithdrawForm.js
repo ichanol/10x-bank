@@ -66,7 +66,7 @@ const DepositWithdrawForm = ({
               message: "Please input the amount!",
             },
             isDeposit
-              ? null
+              ? {}
               : {
                   message: "Insufficient Balance!",
                   validator: amountValidator(balance),

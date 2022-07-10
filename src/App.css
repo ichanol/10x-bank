@@ -2,12 +2,17 @@
   user-select: none;
 }
 .layout {
-  height: 100vh;
+  flex: 1;
+
+  overflow-y: scroll;
 }
 .content {
+  min-height: auto;
+
   padding: 50px;
 }
-.empty {
+.empty,
+.welcome {
   display: flex;
   flex-direction: column;
   height: 100%;

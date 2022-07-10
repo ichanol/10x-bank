@@ -1,11 +1,11 @@
 import "./Header.css";
 import React from "react";
-import { Layout, Button, Typography } from "antd";
+import { Layout, Button, Typography, Tooltip } from "antd";
 import { WalletOutlined, RocketFilled } from "@ant-design/icons";
 const { Title } = Typography;
 const { Header: HeaderComponent } = Layout;
 
-const Header = () => {
+const Header = ({ onConnectWallet = () => {}, address = null }) => {
   return (
     <HeaderComponent
       style={{
@@ -27,8 +27,21 @@ const Header = () => {
         shape="round"
         size="large"
         icon={<WalletOutlined />}
+        onClick={address ? null : onConnectWallet}
       >
-        Connect Wallet
+        {address ? (
+          <Tooltip
+            title={<span style={{ fontSize: 12 }}>{address}</span>}
+            color="#545476"
+            placement="bottomRight"
+          >
+            <span style={{ fontWeight: "bold" }}>{`0x...${address.slice(
+              address.length - 4
+            )}`}</span>
+          </Tooltip>
+        ) : (
+          "Connect Wallet"
+        )}
       </Button>
     </HeaderComponent>
   );
